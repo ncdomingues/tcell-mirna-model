@@ -1,0 +1,5 @@
+condition,expected,baseline_pct,condition_pct,increased_vs_baseline,is_top_response_in_row,pass
++IL12 (expect Th1),Th1,0.0,64.0,True,True,True
++IL4 (expect Th2),Th2,42.7,47.0,True,True,True
++TGFB+IL6 (expect Th17),Th17,0.0,73.7,True,True,True
++TGFB only (expect iTreg),iTreg,30.3,19.3,False,False,False

@@ -1,0 +1,6 @@
+,Th1,Th2,Th17,iTreg
+baseline (TCR+IL2 only),0.0,42.7,0.0,30.3
++IL12 (expect Th1),64.0,43.3,0.0,11.7
++IL4 (expect Th2),0.0,47.0,0.0,36.0
++TGFB+IL6 (expect Th17),0.0,42.7,73.7,19.3
++TGFB only (expect iTreg),0.0,42.7,73.7,19.3

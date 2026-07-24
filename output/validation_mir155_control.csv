@@ -1,0 +1,3 @@
+node,expectation,no_miRNA_pct,miR155_only_pct,matches_literature
+TBX21,Th1 up (miR-155-5p is Th1-promoting; O'Connell et al. 2010),27.0,36.2,True
+GATA3,Th2 down (miR-155-5p represses the GATA3/Th2 axis),44.0,15.5,True
