@@ -19,6 +19,8 @@ src/
   logic_engine.py   tokenizer/parser/evaluator + asynchronous simulator
   run_analysis.py   builds the 4 miRNA conditions, runs the ensemble,
                      writes tables to output/ and figures to figures/
+walkthrough.ipynb    annotated, executed notebook walking through every
+                     piece of code above, cell by cell, with live output
 output/              CSV tables + run metadata (JSON)
 figures/              network_graph.png, trajectories.png, phenotype_bars.png
 MODEL_NOTES.md        modelling decisions & caveats
@@ -32,6 +34,11 @@ python src/run_analysis.py
 ```
 
 Takes under a minute; regenerates everything in `output/` and `figures/`.
+
+To read the annotated walkthrough (explains the parser, the multi-valued
+semantics, the simulator, and the 4-condition experiment with live code and
+output), open `walkthrough.ipynb` in Jupyter, or view it directly on GitHub
+(it renders with all outputs already saved).
 
 ## What it does
 
