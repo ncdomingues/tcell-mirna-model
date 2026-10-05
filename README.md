@@ -60,9 +60,25 @@ output), open `walkthrough.ipynb` in Jupyter, or view it directly on GitHub
 4. Compares master transcription factor activation frequency (Th1/Th2/Th17/
    iTreg/Tfh/Th22/Th9 markers) across the four conditions, and plots node
    activity trajectories over time.
+5. `ml_predict.py`: trains a classifier to predict eventual phenotype from a
+   trajectory's own partial (not-yet-converged) state, and separately asks
+   whether the same task is even answerable from what the original 2019
+   R/GINsim analysis ever published (it isn't -- see the script's docstring).
 
 ## Dependencies
 
-`numpy`, `pandas`, `matplotlib`, `networkx` -- see `requirements.txt`. No
-external logical-modelling software (GINsim, MaBoSS, BoolNet) is required;
-the simulation engine is a self-contained ~150-line reimplementation.
+`numpy`, `pandas`, `matplotlib`, `networkx`, `scikit-learn` -- see
+`requirements.txt`. No external logical-modelling software (GINsim, MaBoSS,
+BoolNet) is required; the simulation engine is a self-contained ~150-line
+reimplementation.
+
+## R re-analysis (`r_analysis/`)
+
+An independent second implementation of the same engine, in R + ggplot2,
+used to (1) cross-validate the Python engine against an unrelated codebase,
+and (2) properly re-run two real historical experiments found in the
+original 2016-2017 `ThesisNDPhD/Modelling/` working directory -- the
+miR-34c-5p transcription-factor hypothesis testing and the Th1/Th2/Th17/Treg
+stimulation-condition sweeps -- this time with proper ensembles and
+confidence intervals. See `r_analysis/R_ANALYSIS.md` for the full write-up
+and findings. Requires R (>=4.0) with `tidyverse`/`ggplot2`/`jsonlite`.

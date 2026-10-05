@@ -1,0 +1,20 @@
+{
+  "python_model": {
+    "n_samples": 1600,
+    "n_features_available_per_sample": 20,
+    "best_accuracy": 0.98,
+    "best_config": {
+      "sweep": 10,
+      "feature_set": "full"
+    },
+    "majority_class_baseline": 0.5
+  },
+  "r_model_reconstructed": {
+    "n_total_records": 196,
+    "n_train": 137,
+    "n_test": 59,
+    "n_features": 16,
+    "accuracy": 0.5593,
+    "majority_class_baseline": 0.661
+  }
+}

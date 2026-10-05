@@ -1,0 +1,5 @@
+stimulation	expected_label	node	pct	ci_lo	ci_hi
+Th1 (+IL12)	Th1	TBX21	59.3	53.7	64.7
+Th2 (+IL4)	Th2	GATA3	49.3	43.7	55
+Th17 (+IL6+TGFB)	Th17	RORC	73.3	68.1	78
+Treg (+TGFB)	iTreg	FOXP3	18.7	14.7	23.5

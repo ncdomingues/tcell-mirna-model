@@ -1,0 +1,90 @@
+node	value	formula	description
+TCR	1	APC-Antigen & CD3 & CD28 & !IL2:2	T cell activation is dependent on presentation of antigen by MHC-II on APC, CD28 and CD3.
+CD28	1	!IL2:2 & !miR-34c-5p	Represents receptor desensitisation once differentiation begins (IL2:2) and predicted miR-34c-5p targeting.
+LCK	1	TCR & CD45RA	Naive CD45 receptor (alpha isoform) is activated by phosphorylation by LCK.
+ZAP70	2	LCK & !miR-34c-5p	LCK phosphorylates ABL1, which phosphorylates ZAP70. miR-34c-5p has been shown to target ZAP70 mRNA.
+ZAP70	1	LCK	Partial ZAP70 activation persists even under miR-34c-5p repression (level 2 blocked, level 1 not).
+PI3K	1	LCK & CD28	CD28 and LCK activate PI3K.
+PIP3	1	PI3K	PIP3 is formed by PI3K transfer of phosphate from PIP2; required for PDK1 activation.
+AKT1-PKB	1	PIP3	PDK1 phosphorylates PKB(AKT1), activating it. AKT1 inhibits growth-arrest and pro-apoptotic proteins.
+CDKN1A-p21	1	!AKT1-PKB	CDKN1A(p21) promotes growth arrest and is inhibited by phosphorylation by AKT1.
+RAC1	1	ZAP70 & !miR-155-5p	RAC1 is activated downstream of ZAP70 via VAV1/VAV3; predicted and validated miR-155-5p target.
+MAPK14-p38	1	RAC1	p38 activation downstream of RAC1.
+SRF	1	MAPK14-p38	SRF is activated by VAV3-dependent RAC1 signalling.
+JUN	1	MAPK8-JNK & !miR-155-5p	JNK phosphorylates and activates JUN. JUN is a predicted and validated miR-155-5p target.
+FOS	1	MAPK1-ERK & !miR-34c-5p & !miR-155-5p	ERK activates FOS by phosphorylation. FOS is a predicted target of both miR-155-5p and miR-34c-5p.
+FOXO1	1	TP53 & !AKT1-PKB & !miR-155-5p	TP53 promotes FOXO1 transcription; AKT1 phosphorylation excludes it from the nucleus; miR-155-5p targets AKT1.
+IP3	1	ZAP70	ZAP70 leads to IP3 formation via PLCG1 splitting PIP2 into IP3 and DAG.
+DAG	1	ZAP70	ZAP70 leads to DAG formation via PLCG1 splitting PIP2 into IP3 and DAG.
+Calcineurin	1	IP3	IP3 triggers calcium release; calcium-calmodulin activates calcineurin.
+NFAT	1	Calcineurin	Calcium-dependent NFATs are dephosphorylated by calcineurin and translocate to the nucleus.
+BCMcomplex	1	!miR-155-5p	CARD11+BCL10+MALT1 complex; all three subunits are predicted miR-155-5p targets.
+NFKB	2	TNFR & !NFKBIE-IkB	Canonical NFKB activation after the BCM complex and IKB degradation, reinforced by TNFR.
+NFKB	1	!NFKBIE-IkB	TNFR-independent NFKB activation once IKB is degraded.
+NFKBIE-IkB	1	!IKBKG	IKB is bound to NFKB in the cytoplasm; IKK phosphorylation releases active NFKB.
+IKBKG	1	DAG & BCMcomplex & !miR-34c-5p	CARD11+BCL10+MALT1 and DAG-dependent phosphorylation are required for IKKG activation; a predicted miR-34c-5p target.
+MAPK8-JNK	1	MAP4K1-MEKKK	GTP-bound RAC1-activated MEKK1 leads to JNK activation.
+MAPK1-ERK	1	RAS & !miR-34c-5p	RAS signalling activates ERK; ERK is a predicted and validated miR-34c-5p target.
+GSK3B	1	!AKT1-PKB	PKB (AKT1) inhibits GSK3B.
+CTNNB1	1	!GSK3B	GSK3B inhibits CTNNB1 (beta-catenin).
+CCNI	1	!GSK3B	GSK3B inhibits CCNI (cyclin I).
+RAS	1	ZAP70	ZAP70 downstream interactions activate RAS (intermediate steps omitted for model simplification).
+CREB	1	RAS & MAPK1-ERK	RAS/ERK signalling phosphorylates RPS6KA1 (RSK), which activates CREB.
+IL2	2	(NFAT & NFKB) | (JUN & FOS) & STAT5 & !(STAT5 & STAT6) & !(NFKB & TBX21)	High IL2 requires NFAT+NFKB, or an AP1/STAT5 route blocked by STAT5+STAT6 or NFKB+TBX21 co-inhibition.
+IL2	1	(NFAT & NFKB) | (JUN & FOS) | NFAT | NFKB	Baseline IL2 production requires NFAT or NFKB (classically), or AP1 (JUN+FOS).
+IL6	1	NFAT & STAT3	IL6 requires NFAT and STAT3, at least under Th17-polarising conditions.
+TGFB	1	FOXP3 & NFAT	TGFB requires NFAT and FOXP3, at least under iTreg-polarising conditions.
+IL12	1	NFKB | TBX21	IL12 production.
+IL21	1	(RORC | MAF) & !TGFB	IL21 is activated by RORC or MAF, but suppressed in the presence of TGFB.
+IL17	1	NFAT & RORC & !FOXP3 & NFKB & STAT3 & !(STAT5 | STAT1 | STAT6)	STAT3 and RORC cooperatively activate IL17; blocked by FOXP3 and by STAT5/STAT1/STAT6 (IL2/IFN/IL4 axes).
+TNF	1	TBX21 | JUN	TNF is trans-activated by TBX21 and induced by JUN.
+IL23	1	(JUN & FOS) & MAPK14-p38 & NFKB & STAT3	IL23 is up-regulated by AP1, p38, NFKB/RELA and STAT3.
+IL4	1	NFAT & (STAT5 | MAF | GATA3) & !TBX21	IL4 (Th2 signature cytokine) requires NFAT and GATA3/STAT5/MAF, and is inhibited by TBX21.
+IL10	1	SP1 & MAF & (GATA3 | STAT3 | TGFB | STAT1)	IL10 production requires SP1 and MAF, plus one of GATA3/STAT3/TGFB/STAT1.
+IFNG	1	!FOXP3 & !STAT3 & NFAT & (TBX21 | STAT4)	IFNG (Th1 signature cytokine) requires TBX21 or STAT4 with NFAT, absent FOXP3 and STAT3.
+FOXO3	1	(FOXO3 | TP53) & !miR-155-5p & !SIRT1	FOXO3 is activated by TP53 and self-maintains; targeted by miR-155-5p; deacetylated (inactivated) by SIRT1.
+TP53	2	(MYC | TP53) & !MDM2 & !SIRT1	TP53 self-upregulates given MYC input, free of MDM2 sequestration and SIRT1 deacetylation.
+TP53	1	!MDM2 & !SIRT1	Baseline TP53 activity requires absence of MDM2 and SIRT1.
+MDM2	2	(NFAT | SP1) & AKT1-PKB & TP53 & !miR-155-5p	MDM2 is activated by NFAT/SP1 and TP53, needs AKT1 for nuclear translocation; predicted miR-155-5p target.
+MDM2	1	NFAT & AKT1-PKB	Baseline MDM2 activation by NFAT and AKT1.
+SP1	1	(STAT3 | CDKN1A-p21) & !TP53 & !NFKB	STAT3 activates the SP1 promoter; NFKB, CDKN1A and TP53 repress it.
+MYC	1	(STAT4 | STAT3) & !miR-34c-5p & !PRDM1-BLIMP1	MYC requires STAT4/STAT3, absence of BLIMP1; MYC is a validated miR-34c-5p target.
+STAT1	1	IFNGR & !miR-34c-5p	IFNGR activates STAT1; predicted miR-155-5p and miR-34c-5p target.
+STAT4	1	IL12R & !GATA3	IL12 (Th1-polarising) activates STAT4 in the absence of GATA3.
+STAT5	2	IL2R:2 | IL4R:2	High STAT5 requires high-level IL2R or IL4R engagement.
+STAT5	1	!IL2R:2 & !IL4R:2 & (IL4R:1 | IL2R:1)	Baseline STAT5 from low-level IL2R/IL4R engagement.
+STAT6	1	IL4R	IL4R signals through STAT6 to activate GATA3 transcription.
+STAT3	1	(TGFBR | IL6R | IL23R | IL1R) & !SIRT1 & !miR-155-5p & !miR-34c-5p	STAT3 is activated by Th17-polarising cytokine receptors; predicted target of both miRNAs; deacetylated by SIRT1.
+IL2R	1	IL2 & CGC & STAT5:2	The IL-2 receptor requires the common gamma chain and activates STAT5 upon binding.
+IL2R	1	IL2 & CGC	Baseline IL-2 receptor engagement.
+IL6R	1	IL6 & !miR-34c-5p	IL6R is activated by bound IL6; predicted miR-34c-5p target.
+TGFBR	1	TGFB & !miR-34c-5p	TGFBR is activated by bound TGFB; predicted miR-34c-5p target.
+IL21R	1	CGC & (MAF | STAT3) & !(MAF & TGFB)	IL-21 receptor requires CGC, is activated by MAF or STAT3, except in the presence of TGFB.
+TNFR	1	TNF	TNFR is activated by bound TNF; predicted miR-34c-5p target.
+IL23R	1	(RORC & STAT3) | IL23	STAT3 and RORC activate IL23R transcription; IL23R is also activated by IL23.
+IL4R	2	CGC & IL4 & STAT5	High-level IL-4 receptor engagement, activating STAT6 and STAT5.
+IL4R	1	IL4 | (CGC & IL4)	Baseline IL-4 receptor engagement by bound IL4.
+IL10R	1	IL10 & !miR-34c-5p	IL10R is activated by bound IL10; predicted miR-34c-5p target (IL10RB).
+IFNGR	1	IFNG & !miR-155-5p	IFNGR is activated by bound IFNG; miR-155-5p targets IFNGR1.
+IL22	1	RORC & TBX21 & AHR & !MAF	AHR with RORC and TBX21 activate IL22; MAF mediates TGFB-dependent suppression of IL22.
+IL9	1	SPI1-PU1	PU.1 activates IL9 transcription.
+TBX21	2	(TBX21 & STAT1) | (TBX21 & STAT4)	TBX21 (Th1 master regulator) positively self-regulates given STAT1 or STAT4.
+TBX21	1	(STAT1 | STAT4)	Baseline TBX21 activation by STAT1 or STAT4.
+GATA3	2	(GATA3 | STAT6 | STAT5) & NFKB & !miR-34c-5p	GATA3 (Th2 master regulator) is activated by STAT6 with NFKB and self-maintained; predicted miR-34c-5p target.
+GATA3	1	(GATA3 | STAT6 | STAT5) & NFKB	Baseline GATA3 activation.
+RORC	1	TGFBR & STAT3	RORC (Th17 master regulator) is activated by STAT3, promoted by TGFB signalling.
+FOXP3	1	STAT5 & NFAT & FOXP3 & !miR-34c-5p	FOXP3 (iTreg master regulator) self-maintains given STAT5 and NFAT; predicted miR-34c-5p target.
+FOXP3	1	STAT5 & NFAT & !FOXP3 & !STAT1 & !(STAT3 & RORC) & !miR-34c-5p	De-novo FOXP3 induction, blocked by STAT1 or the STAT3+RORC combination.
+BCL6	1	(STAT3 & STAT4) | SPI1-PU1 & !(TBX21 & miR-34c-5p)	BCL6 (Tfh master regulator) requires STAT3+STAT4 or SPI1, absent the TBX21+miR-34c-5p combination.
+SPI1-PU1	1	GATA3 & TGFBR & !miR-155-5p	TGFBR promotes SPI1 (PU.1) activity; miR-155-5p inhibits its translation.
+MAF	1	STAT5 | STAT3 & !(TGFB & miR-155-5p)	MAF requires STAT5 (IL2 route) or STAT3 (IL6 route); the STAT3 route is blocked by TGFB+miR-155-5p.
+AHR	1	SP1 & NFKB | (MYC & GATA3) | (FOS & JUN) & !miR-34c-5p	AHR (Th22-associated) is induced by SP1+NFKB, or MYC+GATA3, or FOS+JUN (this last route blocked by miR-34c-5p).
+IL12R	1	IL12	IL12R is activated by bound IL12.
+IL1R	1	STAT3	STAT3 accounts for IL1R differential expression in naive Th vs Th17 cells.
+PRDM1-BLIMP1	1	(JUN & FOS & CREBBP & !BCL6) | (STAT3 & !BCL6)	BLIMP1 requires AP1 (JUN+FOS) or STAT3, and absence of BCL6.
+SIRT1	1	FOXO3 | (FOXO3 & CREB) & !TP53 & !miR-155-5p	CREB and FOXO3 activate SIRT1 transcription; TP53 inhibits it. (Transcribed exactly as published; see model_notes.md.)
+miR-34c-5p	2	GATA3 & MYC & (TP53 | FOXO3 | SP1)	Enhanced miR-34c-5p transcription: GATA3+MYC plus one of TP53/FOXO3/SP1 (ChIP-seq-supported).
+miR-34c-5p	1	GATA3 & MYC	Baseline miR-34c-5p transcription requires GATA3 and MYC (which themselves control T-cell proliferation).
+miR-155-5p	1	NFKB & NFAT & (TBX21 | GATA3 | RORC | FOXP3)	Enhanced miR-155-5p transcription with a Th master regulator present.
+miR-155-5p	1	NFKB & NFAT	Baseline miR-155-5p transcription shortly after activation, requiring NFAT and NFKB.
+MAP4K1-MEKKK	1	ZAP70	MEKKK is activated downstream of ZAP70 (via LAT), leading to JNK activation.

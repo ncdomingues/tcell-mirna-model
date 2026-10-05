@@ -1,0 +1,13 @@
+sweep,sweep_frac,feature_set,n_features,accuracy,majority_class_baseline,n_train,n_test
+1,0.1,full,20,0.4875,0.5,1199,400
+1,0.1,upstream_only,13,0.495,0.5,1199,400
+2,0.2,full,20,0.49,0.5,1199,400
+2,0.2,upstream_only,13,0.5175,0.5,1199,400
+3,0.3,full,20,0.525,0.5,1199,400
+3,0.3,upstream_only,13,0.53,0.5,1199,400
+5,0.5,full,20,0.5325,0.5,1199,400
+5,0.5,upstream_only,13,0.52,0.5,1199,400
+7,0.7,full,20,0.5625,0.5,1199,400
+7,0.7,upstream_only,13,0.5625,0.5,1199,400
+10,1.0,full,20,0.98,0.5,1199,400
+10,1.0,upstream_only,13,0.68,0.5,1199,400
